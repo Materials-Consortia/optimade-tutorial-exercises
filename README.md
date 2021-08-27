@@ -55,9 +55,29 @@ writing your own queries, scripts or code. Some possible options:
 
 ## Exercise 1
 
-For example, you could try visiting the links in Table 1 of the OPTIMADE
-paper \[1\] (clickable links in arXiv version \[2\]), which is
-reproduced below.
+</div>
+
+<div class="cell markdown">
+
+1.  In your browser, try visiting the links in Table 1 of the OPTIMADE
+    paper \[1\] (clickable links in arXiv version \[2\]), which is
+    reproduced below.
+
+    -   Familiarise yourself with the standard JSON:API output fields
+        (`data`, `meta` and `links`).
+    -   You will find the crystal structures returned for the query as a
+        list under the `data` key, with the OPTIMADE-defined fields
+        listed under the `attributes` of each list entry.
+    -   To focus on one particular entry, try replacing the `filter` URL
+        parameter with the `/<id>` for the `id` of one particular
+        structure (e.g.
+        `https://example.org/optimade/v1/structures/<structure_id>`).
+    -   Try changing the filter section of the URL to query other
+        OPTIMADE fields of your choice.
+    -   Explore other endpoints provided by each of these providers. If
+        they serve "extra" fields (i.e. those containing the provider
+        prefix), try to find out what these fields mean by querying the
+        `/info/structures` endpoint.
 
 <center>
 <table>
@@ -136,11 +156,12 @@ data", [arXiv:2103.02068](https://arxiv.org/abs/2103.02068) (2021).
 
 ## Exercise 2
 
-</div>
+\~By querying on the `dimension_types` field, find crystal structures
+that are only periodic in 2 directions (i.e. layered structures).\~
 
-<div class="cell code">
+There are no databases with true 2D materials
 
-``` python
-```
+Could just query the MaterialsCloud 2D database and find common
+prototypes
 
 </div>
