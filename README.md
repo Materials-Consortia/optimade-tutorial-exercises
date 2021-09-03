@@ -2,20 +2,27 @@
 
 # OPTIMADE NOMAD CoE Tutorial Exercises
 
+*[Matthew Evans](https://ml-evs.science), UCLouvain*
+
 </div>
 
 <div class="cell markdown">
 
 ## Introduction
 
-</div>
-
-<div class="cell markdown">
-
 These open-ended exercises are provided to accompany NOMAD CoE [Tutorial
 6:
 OPTIMADE](https://th.fhi-berlin.mpg.de/meetings/nomad-tutorials/index.php?n=Meeting.Tutorial6),
 run across the 7th and 8th of September 2021.
+
+This document is hosted on
+[GitHub](https://github.com/Materials-Consortia/optimade-tutorial-exercises),
+and all feedback related to the exercises can be provided as an issue in
+that repository.
+
+If you would like to get involved with the OPTIMADE consortium, you can
+find some more details on the [OPTIMADE home
+page](https://optimade.org/#get-involved).
 
 The OPTIMADE specification defines a JSON API that can be accessed with
 many different tools. You will have heard about three such tools in the
@@ -59,25 +66,51 @@ writing your own queries, scripts or code. Some possible options:
 
 <div class="cell markdown">
 
-1.  In your browser, try visiting the links in Table 1 of the OPTIMADE
-    paper \[1\] (clickable links in arXiv version \[2\]), which is
-    reproduced below.
+This aim of this exercise is to familiarise yourself with the OPTIMADE
+JSON API. In the recent OPTIMADE paper \[[1](#ref1)\], we provided the
+number of results to a set of queries across all OPTIMADE
+implementations, obtained by applying the same filter to the structures
+endpoint of each database. The filters are:
+
+-   Query for structures containing a group IV element: \`elements HAS
+    ANY "C", "Si", "Ge", "Sn", "Pb"
+
+-   As above, but return only binary phases:
+    `elements HAS ANY "C", "Si", "Ge", "Sn", "Pb" AND nelements=2`.
+
+-   This time, exclude lead and return ternary phases:
+    `elements HAS ANY "C", "Si", "Ge", "Sn" AND NOT elements HAS "Pb" AND elements LENGTH 3`.
+
+-   In your browser, try visiting the links in Table 1 of the OPTIMADE
+    paper \[[1](#ref1)\] (clickable links in arXiv version
+    \[[2](#ref2)\]), which is reproduced below.
 
     -   Familiarise yourself with the standard JSON:API output fields
         (`data`, `meta` and `links`).
     -   You will find the crystal structures returned for the query as a
         list under the `data` key, with the OPTIMADE-defined fields
         listed under the `attributes` of each list entry.
-    -   To focus on one particular entry, try replacing the `filter` URL
-        parameter with the `/<id>` for the `id` of one particular
-        structure (e.g.
-        `https://example.org/optimade/v1/structures/<structure_id>`).
-    -   Try changing the filter section of the URL to query other
-        OPTIMADE fields of your choice.
-    -   Explore other endpoints provided by each of these providers. If
-        they serve "extra" fields (i.e. those containing the provider
-        prefix), try to find out what these fields mean by querying the
-        `/info/structures` endpoint.
+    -   The `meta` field provides useful information about your query,
+        e.g. `data_returned` shows how many results there are in total,
+        not just in the current page of the response (you can check if
+        the table still contains the correct number of entries, or if it
+        is now out of date).
+    -   The `links` field provides links to the next or previous pages
+        of your response, in case you requested more structures than the
+        `page_limit` for that implementation.
+
+-   Choose one particular entry to focus on: replace the `filter` URL
+    parameter with `/<structure_id>` for the `id` of one particular
+    structure (e.g.
+    `https://example.org/optimade/v1/structures/<structure_id>`).
+
+-   Explore other endpoints provided by each of these providers. If they
+    serve "extra" fields (i.e. those containing the provider prefix),
+    try to find out what these fields mean by querying the
+    `/info/structures` endpoint.
+
+-   Try performing the same queries with some of the tools listed above,
+    or in scripts of your own design.
 
 <center>
 <table>
@@ -144,11 +177,13 @@ writing your own queries, scripts or code. Some possible options:
 </table>
 </center>
 
-\[1\] Andersen *et al.*, "OPTIMADE, an API for exchanging materials
-data", *Sci Data* **8**, 217 (2021)
-[10.1038/s41597-021-00974-z](https://doi.org/10.1038/s41597-021-00974-z).  
-\[2\] Andersen *et al.*, "OPTIMADE, an API for exchanging materials
-data", [arXiv:2103.02068](https://arxiv.org/abs/2103.02068) (2021).
+<span id="ref1">\[1\]</span> Andersen *et al.*, "OPTIMADE, an API for
+exchanging materials data", *Sci Data* **8**, 217 (2021)
+[10.1038/s41597-021-00974-z](https://doi.org/10.1038/s41597-021-00974-z).
+
+<span id="ref2">\[2\]</span> Andersen *et al.*, "OPTIMADE, an API for
+exchanging materials data" (2021)
+[arXiv:2103.02068](https://arxiv.org/abs/2103.02068).
 
 </div>
 
@@ -156,12 +191,92 @@ data", [arXiv:2103.02068](https://arxiv.org/abs/2103.02068) (2021).
 
 ## Exercise 2
 
-\~By querying on the `dimension_types` field, find crystal structures
-that are only periodic in 2 directions (i.e. layered structures).\~
+The filters from Exercise 1 screened for group IV containing compounds,
+further refining the query to exclude lead, and finally to include only
+ternary phases.
 
-There are no databases with true 2D materials
+-   Choose a suitable database and modfiy the filters from Exercise 1 to
+    search for binary \[III\]-\[V\] semiconductors.
+    -   A "suitable" database here is one that you think will have good
+        coverage across this chemical space.
+-   Using the `chemical_formula_anonymous` field, investigate the most
+    common stoichiometric ratios between the constituent elements, e.g.
+    1:1, 2:1, etc.
+    -   You may need to follow pagination links (`links->next` in the
+        response) to access all available data for your query, or you
+        can try adding the `page_limit=100` URL parameter to request
+        more structures per response.
+-   Apply the same filter to another database and assess the similarity
+    between the results, thinking carefully about how the different
+    focuses of each database and different methods in their
+    construction/curation could lead to biases in this outcome.
+    -   For example, an experimental database may have one crystal
+        structure entry per experimental sample studied, in which case
+        the most useful (or "fashionable") compositions will return many
+        more entries, especially when compared to a database that
+        curates crystal structures such that each ideal crystal has one
+        canonical entry (e.g., a database of minerals).
+-   Try to use the query you have constructed in the multi-provider
+    clients (linked above), to query all OPTIMADE providers
+    simultaneously.
 
-Could just query the MaterialsCloud 2D database and find common
-prototypes
+</div>
+
+<div class="cell markdown">
+
+## Exercise 3
+
+There are many useful properties that the OPTIMADE specification has not
+standardized. This is typically because the use of the property requires
+additional context, e.g., reporting a "band gap" without describing how
+it was calculated or measured, or properties that are only meaningful in
+the context of a database, e.g., relative energies that depend on other
+reference calculations. For this reason, the OPTIMADE specification
+allows implementations to serve their own fields with an appropriate
+"provider prefix" to the field name, and a description at the
+`/info/structures` endpoint.
+
+One computed property that is key to many high-throughput studies is the
+*chemical stability* of a crystal structure, i.e. whether the structure
+is predicted to spontaneously decompose into a different phase (or
+phases). This is typically computed as the distance from the convex hull
+in composition-energy space, with a value of 0 (or \<0, if the target
+structure was not used to compute the hull itself) indicating a stable
+structure.
+
+-   Interrogate the `/info/structures` endpoints of the OPTIMADE
+    implementations that serve DFT data (e.g., Materials Project, AFLOW,
+    OQMD, etc.) and identify those that serve a field that could
+    correspond to hull distance, or other stability metrics.
+-   Construct a filter that allows you to screen a database for
+    metastable materials (i.e., 0 \< *δ* \< 25 meV/atom) according to
+    this metric.
+-   Try to create a filter that can be applied to multiple databases
+    simultaneously (e.g., apply
+    `?filter=_databaseA_hull_distance < 25 OR _databaseB_stability < 25`).
+    What happens when you run this filter against a database that does
+    not contain the field?
+
+</div>
+
+<div class="cell markdown">
+
+## Exercise 4
+
+As a final exercise, consider your own research problems and how you
+might use OPTIMADE. If you have any suggestions or feedback about how
+OPTIMADE can be made more useful for you, please start a discussion on
+the [OPTIMADE MatSci forum](https://matsci.org/c/optimade/29) or raise
+an issue at the appropriate GitHub repository ([Materials-Consortia
+GitHub](https://github.com/Materials-Consortia/).
+
+Some potential prompts:
+
+-   What additional fields or entry types should OPTIMADE standardize to
+    be most useful to you?
+-   How could the existing tools be improved, or what new tools could be
+    created to make OPTIMADE easier to use?
+-   What features from other APIs/databases that you use could be
+    adopted within OPTIMADE?
 
 </div>
