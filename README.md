@@ -10,6 +10,10 @@
 
 ## Introduction
 
+</div>
+
+<div class="cell markdown">
+
 These open-ended exercises are provided to accompany NOMAD CoE [Tutorial
 6:
 OPTIMADE](https://th.fhi-berlin.mpg.de/meetings/nomad-tutorials/index.php?n=Meeting.Tutorial6),
@@ -72,8 +76,8 @@ number of results to a set of queries across all OPTIMADE
 implementations, obtained by applying the same filter to the structures
 endpoint of each database. The filters are:
 
--   Query for structures containing a group IV element: \`elements HAS
-    ANY "C", "Si", "Ge", "Sn", "Pb"
+-   Query for structures containing a group IV element:
+    `elements HAS ANY "C", "Si", "Ge", "Sn", "Pb"`.
 
 -   As above, but return only binary phases:
     `elements HAS ANY "C", "Si", "Ge", "Sn", "Pb" AND nelements=2`.
@@ -191,6 +195,10 @@ exchanging materials data" (2021)
 
 ## Exercise 2
 
+</div>
+
+<div class="cell markdown">
+
 The filters from Exercise 1 screened for group IV containing compounds,
 further refining the query to exclude lead, and finally to include only
 ternary phases.
@@ -225,6 +233,10 @@ ternary phases.
 <div class="cell markdown">
 
 ## Exercise 3
+
+</div>
+
+<div class="cell markdown">
 
 There are many useful properties that the OPTIMADE specification has not
 standardized. This is typically because the use of the property requires
@@ -262,6 +274,10 @@ structure.
 <div class="cell markdown">
 
 ## Exercise 4
+
+</div>
+
+<div class="cell markdown">
 
 As a final exercise, consider your own research problems and how you
 might use OPTIMADE. If you have any suggestions or feedback about how
