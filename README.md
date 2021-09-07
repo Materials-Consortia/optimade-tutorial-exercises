@@ -238,6 +238,28 @@ ternary phases.
 
 <div class="cell markdown">
 
+This interactive exercise will explore the use of the OPTIMADE client
+implemented in the `pymatgen` Python library. This exercise can be found
+in this repository under `./notebooks/demonstration-pymatgen.ipynb` or
+accessed online in [Google
+Colab](https://colab.research.google.com/github/Materials-Consortia/optimade-tutorial-exercises/blob/main/notebooks/demonstration-pymatgen-for-optimade-queries.ipynb)
+(or equivalent notebook runners, such as
+[Binder](https://mybinder.org/v2/gh/Materials-Consortia/optimade-tutorial-exercises/HEAD?filepath=notebooks%2Fdemonstration-pymatgen-for-optimade-queries.ipynb)).
+
+[![Open In
+Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/Materials-Consortia/optimade-tutorial-exercises/blob/main/notebooks/demonstration-pymatgen-for-optimade-queries.ipynb)
+[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/Materials-Consortia/optimade-tutorial-exercises/HEAD?filepath=notebooks%2Fdemonstration-pymatgen-for-optimade-queries.ipynb)
+
+</div>
+
+<div class="cell markdown">
+
+## Exercise 4
+
+</div>
+
+<div class="cell markdown">
+
 There are many useful properties that the OPTIMADE specification has not
 standardized. This is typically because the use of the property requires
 additional context, e.g., reporting a "band gap" without describing how
@@ -273,7 +295,7 @@ structure.
 
 <div class="cell markdown">
 
-## Exercise 4
+## Exercise 5
 
 </div>
 
