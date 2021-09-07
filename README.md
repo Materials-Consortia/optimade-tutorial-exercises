@@ -58,7 +58,8 @@ writing your own queries, scripts or code. Some possible options:
     [urllib.request](https://docs.python.org/3/library/urllib.request.html)
     or the more ergonomic external library
     [requests](https://requests.readthedocs.io/en/master/). In
-    Javascript, you can just use `fetch(...)` method or a more advanced [optimade client](https://github.com/tilde-lab/optimade-client) library.
+    Javascript, you can just use `fetch(...)` or a more advanced
+    [optimade client](https://github.com/tilde-lab/optimade-client).
 
 </div>
 
@@ -271,12 +272,12 @@ allows implementations to serve their own fields with an appropriate
 `/info/structures` endpoint.
 
 One computed property that is key to many high-throughput studies is the
-*chemical stability* (*δ*) of a crystal structure, i.e. whether the structure
-is predicted to spontaneously decompose into a different phase (or
-phases). This is typically computed as the distance from the convex hull
-in composition-energy space, with a value of 0 (or \<0, if the target
-structure was not used to compute the hull itself) indicating a stable
-structure.
+*chemical stability* (*δ*) of a crystal structure, i.e. whether the
+structure is predicted to spontaneously decompose into a different phase
+(or phases). This is typically computed as the distance from the convex
+hull in composition-energy space, with a value of 0 (or \<0, if the
+target structure was not used to compute the hull itself) indicating a
+stable structure.
 
 -   Interrogate the `/info/structures` endpoints of the OPTIMADE
     implementations that serve DFT data (e.g., Materials Project, AFLOW,
@@ -305,7 +306,8 @@ As a final exercise, consider your own research problems and how you
 might use OPTIMADE. If you have any suggestions or feedback about how
 OPTIMADE can be made more useful for you, please start a discussion on
 the [OPTIMADE MatSci forum](https://matsci.org/c/optimade/29) or raise
-an issue at the appropriate [Materials-Consortia GitHub](https://github.com/Materials-Consortia) repository.
+an issue at the appropriate [Materials-Consortia
+GitHub](https://github.com/Materials-Consortia/) repository.
 
 Some potential prompts:
 
