@@ -14,10 +14,10 @@
 
 <div class="cell markdown">
 
-These open-ended exercises are provided to accompany NOMAD CoE [Tutorial
-6:
+These open-ended exercises were initially provided to accompany the
+NOMAD CoE [Tutorial 6:
 OPTIMADE](https://th.fhi-berlin.mpg.de/meetings/nomad-tutorials/index.php?n=Meeting.Tutorial6),
-run across the 7th and 8th of September 2021.
+which ran across the 7th and 8th of September 2021.
 
 This document is hosted on
 [GitHub](https://github.com/Materials-Consortia/optimade-tutorial-exercises),
@@ -60,6 +60,10 @@ writing your own queries, scripts or code. Some possible options:
     [requests](https://requests.readthedocs.io/en/master/). In
     Javascript, you can just use `fetch(...)` or a more advanced
     [optimade client](https://github.com/tilde-lab/optimade-client).
+
+If you are following these tutorials as part of a school or workshop,
+please do not hesitate to ask about how to get started with any of the
+above tools!
 
 </div>
 
