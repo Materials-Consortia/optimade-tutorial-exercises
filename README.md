@@ -1,6 +1,6 @@
 <div class="cell markdown">
 
-# OPTIMADE NOMAD CoE Tutorial Exercises
+# OPTIMADE Tutorial Exercises
 
 *[Matthew Evans](https://ml-evs.science), UCLouvain*
 
@@ -14,15 +14,17 @@
 
 <div class="cell markdown">
 
-These open-ended exercises were initially provided to accompany the
-NOMAD CoE [Tutorial 6:
+This repository hosts general tutorials on the OPTIMADE specification
+and particular database implementations of the API. These open-ended
+exercises were initially provided to accompany the NOMAD CoE [Tutorial
+6:
 OPTIMADE](https://th.fhi-berlin.mpg.de/meetings/nomad-tutorials/index.php?n=Meeting.Tutorial6),
 which ran across the 7th and 8th of September 2021.
 
 This document is hosted on
 [GitHub](https://github.com/Materials-Consortia/optimade-tutorial-exercises),
-and all feedback related to the exercises can be provided as an issue in
-that repository.
+and all feedback or suggestions for new exercises can be provided as an
+issue or pull request in that repository.
 
 If you would like to get involved with the OPTIMADE consortium, you can
 find some more details on the [OPTIMADE home
