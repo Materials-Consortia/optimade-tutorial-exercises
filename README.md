@@ -2,7 +2,11 @@
 
 # OPTIMADE Tutorial Exercises
 
-*[Matthew Evans](https://ml-evs.science), UCLouvain*
+### Contributors
+
+-   [Matthew Evans](https://ml-evs.science), *UCLouvain*
+-   [Matthew Horton](https://github.com/mkhorton), *LBNL*
+-   [Evgeny Blokhin](https://github.com/blokhin), *Tilde Informatics*
 
 </div>
 
@@ -42,8 +46,11 @@ tutorial:
     client](https://pymatgen.org/pymatgen.ext.optimade.html?highlight=optimade#module-pymatgen.ext.optimade).
 
 Each of these clients can send requests to multiple OPTIMADE providers
-*simultaneously*, based on the provider list at
-<https://providers.optimade.org/>.
+*simultaneously*, based on programmatic [providers
+list](https://providers.optimade.org/). You can explore this list at the
+human-readable [providers
+dashboard](https://www.optimade.org/providers-dashboard/), where you can
+see the current OPTIMADE structure count exceeds 17 million!
 
 You may also wish to familiarise yourselves with the OPTIMADE API by
 writing your own queries, scripts or code. Some possible options:
