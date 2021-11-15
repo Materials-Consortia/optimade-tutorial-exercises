@@ -3,8 +3,8 @@
 # OPTIMADE Tutorial Exercises
 
 [![Open In
-Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/Materials-Consortia/optimade-tutorial-exercises/blob/main/notebooks/demonstration-pymatgen-for-optimade-queries.ipynb)
-[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/Materials-Consortia/optimade-tutorial-exercises/HEAD?filepath=notebooks%2Fdemonstration-pymatgen-for-optimade-queries.ipynb)
+Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/Materials-Consortia/optimade-tutorial-exercises/blob/main/notebooks/exercises.ipynb)
+[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/Materials-Consortia/optimade-tutorial-exercises/HEAD?filepath=notebooks%2Fexercises.ipynb)
 [![GitHub
 license](https://img.shields.io/github/license/Materials-Consortia/optimade-tutorial-exercises?logo=GitHub)](https://github.com/Materials-Consortia/optimade-tutorial-exercises)
 
@@ -369,7 +369,7 @@ GitHub repository.
 
 </div>
 
-<div class="cell code" execution_count="72">
+<div class="cell code" execution_count="1">
 
 ``` python
 # Construct a query URL
@@ -378,7 +378,11 @@ GitHub repository.
 
 # Lets choose a random provider for now:
 import random
-some_optimade_base_urls = ["https://optimade.materialsproject.org", "http://crystallography.net/cod/optimade", "https://nomad-lab.eu/prod/rae/optimade/"]
+some_optimade_base_urls = [
+    "https://optimade.materialsproject.org", 
+    "http://crystallography.net/cod/optimade", 
+    "https://nomad-lab.eu/prod/rae/optimade/"
+]
 database_url = random.choice(some_optimade_base_urls)
 
 query = 'elements HAS ANY "C", "Si", "Ge", "Sn", "Pb"'
@@ -389,22 +393,16 @@ query_url = f"{database_url}/v1/structures?filter={query}&{other_options}"
 
 </div>
 
-<div class="cell code" execution_count="73">
+<div class="cell code">
 
 ``` python
 # Using the third-party requests library:
 !pip install requests
 ```
 
-<div class="output stream stdout">
-
-    Requirement already satisfied: requests in /usr/lib/python3/dist-packages (2.22.0)
-
 </div>
 
-</div>
-
-<div class="cell code" execution_count="74">
+<div class="cell code">
 
 ``` python
 # Import the requests library and make the query
@@ -414,15 +412,9 @@ print(response)
 json_response = response.json()
 ```
 
-<div class="output stream stdout">
-
-    <Response [200]>
-
 </div>
 
-</div>
-
-<div class="cell code" execution_count="83">
+<div class="cell code">
 
 ``` python
 # Explore the results
@@ -436,92 +428,5 @@ print(f"Query {query_url} returned {meta['data_returned']} structures")
 print("First structure:")
 pprint.pprint(structures[0])
 ```
-
-<div class="output stream stdout">
-
-    dict_keys(['data', 'links', 'meta'])
-    Query http://crystallography.net/cod/optimade/v1/structures?filter=elements HAS ANY "C", "Si", "Ge", "Sn", "Pb"&page_limit=3 returned 428712 structures
-    First structure:
-    {'attributes': {'_cod_Rall': 0.1073,
-                    '_cod_Robs': 0.0584,
-                    '_cod_Z': '4',
-                    '_cod_Zprime': 1,
-                    '_cod_a': 7.8783,
-                    '_cod_acce_code': 'GS1096',
-                    '_cod_alpha': 90,
-                    '_cod_authors': 'Phan Thanh, S.; Marrot, J.; Renaudin, J.; '
-                                    'Maisonneuve, V.',
-                    '_cod_b': 10.4689,
-                    '_cod_beta': 95.147,
-                    '_cod_c': 16.068,
-                    '_cod_calcformula': '- C5 H17 Al N2 O8 P2 -',
-                    '_cod_cellformula': '- C20 H68 Al4 N8 O32 P8 -',
-                    '_cod_celltemp': 296,
-                    '_cod_date': '2020-10-21',
-                    '_cod_diffrtemp': 296,
-                    '_cod_doi': '10.1107/S0108270100008532',
-                    '_cod_duplicateof': '2011331',
-                    '_cod_file': '1000000',
-                    '_cod_firstpage': '1073',
-                    '_cod_flags': 'has coordinates',
-                    '_cod_formula': '- C5 H17 Al N2 O8 P2 -',
-                    '_cod_gamma': 90,
-                    '_cod_gofall': 1.055,
-                    '_cod_gofref': 1.08,
-                    '_cod_issue': '9',
-                    '_cod_journal': 'Acta Crystallographica, Section C',
-                    '_cod_lastpage': '1074',
-                    '_cod_nel': '6',
-                    '_cod_radType': 'MoKα',
-                    '_cod_sg': 'P 1 21/n 1',
-                    '_cod_sgHall': '-P 2yn',
-                    '_cod_siga': 0.0002,
-                    '_cod_sigb': 0.0001,
-                    '_cod_sigbeta': 0.001,
-                    '_cod_sigc': 0.0004,
-                    '_cod_sigcelltemp': 2,
-                    '_cod_sigdiffrtemp': 2,
-                    '_cod_sigvol': 0.05,
-                    '_cod_svnrevision': '176729',
-                    '_cod_text': 'Phan Thanh, S.; Marrot, J.; Renaudin, J.; '
-                                 'Maisonneuve, V.\n'
-                                 '[H~3~N(CH~2~)~5~NH~3~].AlP~2~O~8~H, a '
-                                 'one-dimensional aluminophosphate\n'
-                                 'Acta Crystallographica, Section C\n'
-                                 '56(9)\n'
-                                 '(2000)\n'
-                                 '1073-1074',
-                    '_cod_time': '18:00:00',
-                    '_cod_title': '[H~3~N(CH~2~)~5~NH~3~].AlP~2~O~8~H, a '
-                                  'one-dimensional aluminophosphate',
-                    '_cod_vol': 1319.9,
-                    '_cod_volume': '56',
-                    '_cod_wRall': 0.2069,
-                    '_cod_wRref': 0.1362,
-                    '_cod_wavelength': 0.71073,
-                    '_cod_year': '2000',
-                    'chemical_formula_descriptive': 'C5H17AlN2O8P2',
-                    'chemical_formula_hill': 'C5H17AlN2O8P2',
-                    'dimension_types': [1, 1, 1],
-                    'elements': ['Al', 'C', 'H', 'N', 'O', 'P'],
-                    'elements_ratios': [0.0285714285714286,
-                                        0.142857142857143,
-                                        0.485714285714286,
-                                        0.0571428571428571,
-                                        0.228571428571429,
-                                        0.0571428571428571],
-                    'last_modified': '2020-10-21T18:00:00Z',
-                    'lattice_vectors': [[7.8783, 0, 0],
-                                        [0, 10.4689, 0],
-                                        [-1.44148155534836, 0, 16.0032107692672]],
-                    'nelements': 6,
-                    'nperiodic_dimensions': 3},
-     'id': '1000000',
-     'links': {'self': 'https://www.crystallography.net/cod/optimade/v1.0.0/structures/1000000'},
-     'relationships': {'references': {'data': [{'id': '1000000',
-                                                'type': 'references'}]}},
-     'type': 'structures'}
-
-</div>
 
 </div>
