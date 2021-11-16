@@ -386,9 +386,12 @@ some_optimade_base_urls = [
 database_url = random.choice(some_optimade_base_urls)
 
 query = 'elements HAS ANY "C", "Si", "Ge", "Sn", "Pb"'
-other_options = "page_limit=3"
+params = {
+    "filter": query,
+    "page_limit": 3
+}
 
-query_url = f"{database_url}/v1/structures?filter={query}&{other_options}"
+query_url = f"{database_url}/v1/structures"
 ```
 
 </div>
@@ -407,7 +410,7 @@ query_url = f"{database_url}/v1/structures?filter={query}&{other_options}"
 ``` python
 # Import the requests library and make the query
 import requests
-response = requests.get(query_url)
+response = requests.get(query_url, params=params)
 print(response)
 json_response = response.json()
 ```
@@ -417,7 +420,7 @@ json_response = response.json()
 <div class="cell code">
 
 ``` python
-# Explore the results
+# Explore the first page of results
 import pprint
 print(json_response.keys())
 structures = json_response["data"]
@@ -427,6 +430,36 @@ print(f"Query {query_url} returned {meta['data_returned']} structures")
 
 print("First structure:")
 pprint.pprint(structures[0])
+```
+
+</div>
+
+<div class="cell code">
+
+``` python
+# Using pagination to loop multiple requests
+# We want to add additional page_limit and page_offset parameters to the query
+offset = 0
+page_limit = 10
+while True:
+    params = {
+        "filter": query,
+        "page_limit": page_limit,
+        "page_offset": offset
+    }
+
+    response = requests.get(query_url, params=params).json()
+
+    # Print the IDs in the response
+    for result in response["data"]:
+        print(result["id"])
+    
+    offset += page_limit
+    if response["meta"]["data_returned"] < offset:
+        break
+    
+    if offset > 100:
+        break
 ```
 
 </div>
