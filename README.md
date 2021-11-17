@@ -333,7 +333,7 @@ stable structure.
 </div>
 
 <div class="cell markdown">
-
+    
 ## Exercise 5
 
 </div>
@@ -359,6 +359,32 @@ Some potential prompts:
 </div>
 
 <div class="cell markdown">
+    
+## Exercise 6
+
+</div>
+
+<div class="cell markdown">
+
+The AFLOW database is primarily built by decorating crystallographic prototypes, 
+and a list of the most common prototypes can be found in the [Library of 
+Crystallographic Prototypes](https://aflow.org/prototype-encyclopedia/).
+The prototype labels can also be used to search the database for entries 
+with relaxed structures matching a particular prototype, using the AFLOW
+keyword `aflow_prototype_label_relax`; a full list of AFLOW keywords can be
+found at http://aflow.org/API/optimade/v1.0/info/structures. Searches can be 
+performed for prototype labels using OPTIMADE by appending the `_aflow_` 
+prefix to the keyword: `_aflow_aflow_prototype_label_relax`.
+    
+-   Use OPTIMADE to search AFLOW for NaCl in the rock salt structure: 
+    prototype label `AB_cF8_225_a_b`. 
+-   Use OPTIMADE to search AFLOW for lead-free halide cubic perovskites 
+    with a band gap greater than 3 eV: cubic perovskite prototype label is 
+    `AB3C_cP5_221_a_c_b`.
+
+</div>
+
+<div class="cell markdown">    
 
 ## Example Python code
 
