@@ -39,6 +39,7 @@ page](https://optimade.org/#get-involved).
 -   [Matthew Evans](https://ml-evs.science), *UCLouvain*
 -   [Matthew Horton](https://github.com/mkhorton), *LBNL*
 -   [Evgeny Blokhin](https://github.com/blokhin), *Tilde Informatics*
+-   [Cormac Toher](https://github.com/ctoher), *Duke University*
 
 </div>
 
@@ -333,18 +334,18 @@ stable structure.
 </div>
 
 <div class="cell markdown">
-    
+
 ## Exercise 5
 
 </div>
 
 <div class="cell markdown">
 
-As a final exercise, consider your own research problems and how you
-might use OPTIMADE. If you have any suggestions or feedback about how
-OPTIMADE can be made more useful for you, please start a discussion on
-the [OPTIMADE MatSci forum](https://matsci.org/c/optimade/29) or raise
-an issue at the appropriate [Materials-Consortia
+As a final general exercise, consider your own research problems and how
+you might use OPTIMADE. If you have any suggestions or feedback about
+how OPTIMADE can be made more useful for you, please start a discussion
+on the [OPTIMADE MatSci forum](https://matsci.org/c/optimade/29) or
+raise an issue at the appropriate [Materials-Consortia
 GitHub](https://github.com/Materials-Consortia/) repository.
 
 Some potential prompts:
@@ -359,32 +360,34 @@ Some potential prompts:
 </div>
 
 <div class="cell markdown">
-    
+
 ## Exercise 6
 
 </div>
 
 <div class="cell markdown">
 
-The AFLOW database is primarily built by decorating crystallographic prototypes, 
-and a list of the most common prototypes can be found in the [Library of 
-Crystallographic Prototypes](https://aflow.org/prototype-encyclopedia/).
-The prototype labels can also be used to search the database for entries 
-with relaxed structures matching a particular prototype, using the AFLOW
-keyword `aflow_prototype_label_relax`; a full list of AFLOW keywords can be
-found at http://aflow.org/API/optimade/v1.0/info/structures. Searches can be 
-performed for prototype labels using OPTIMADE by appending the `_aflow_` 
+The AFLOW database is primarily built by decorating crystallographic
+prototypes, and a list of the most common prototypes can be found in the
+[Library of Crystallographic
+Prototypes](https://aflow.org/prototype-encyclopedia/). The prototype
+labels can also be used to search the database for entries with relaxed
+structures matching a particular prototype, using the AFLOW keyword
+`aflow_prototype_label_relax`; a full list of AFLOW keywords can be
+found at AFLOW's `/info/structures` endpoint
+(<http://aflow.org/API/optimade/v1.0/info/structures>). Searches can be
+performed for prototype labels using OPTIMADE by appending the `_aflow_`
 prefix to the keyword: `_aflow_aflow_prototype_label_relax`.
-    
--   Use OPTIMADE to search AFLOW for NaCl in the rock salt structure: 
-    prototype label `AB_cF8_225_a_b`. 
--   Use OPTIMADE to search AFLOW for lead-free halide cubic perovskites 
-    with a band gap greater than 3 eV: cubic perovskite prototype label is 
-    `AB3C_cP5_221_a_c_b`.
+
+-   Use OPTIMADE to search AFLOW for NaCl in the rock salt structure
+    (prototype label `AB_cF8_225_a_b`)
+-   Use OPTIMADE to search AFLOW for lead-free halide cubic perovskites
+    with a band gap greater than 3 eV: (cubic perovskite prototype label
+    is `AB3C_cP5_221_a_c_b`)
 
 </div>
 
-<div class="cell markdown">    
+<div class="cell markdown">
 
 ## Example Python code
 
@@ -398,10 +401,11 @@ GitHub repository.
 <div class="cell code" execution_count="1">
 
 ``` python
-# Construct a query URL
-# You should be able to use any valid OPTIMADE implementation's database URL with any valid query
-
-
+# Construct a query URL.
+#
+# You should be able to use any valid OPTIMADE implementation's
+# database URL with any valid query
+#
 # Lets choose a random provider for now:
 import random
 some_optimade_base_urls = [
