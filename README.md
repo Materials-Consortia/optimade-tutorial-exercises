@@ -272,7 +272,7 @@ ternary phases.
 
 <div class="cell markdown">
 
-## Exercise 3
+## Exercise 3 (pymatgen)
 
 </div>
 
@@ -361,7 +361,7 @@ Some potential prompts:
 
 <div class="cell markdown">
 
-## Exercise 6
+## Exercise 6 (AFLOW)
 
 </div>
 
@@ -384,6 +384,30 @@ prefix to the keyword: `_aflow_aflow_prototype_label_relax`.
 -   Use OPTIMADE to search AFLOW for lead-free halide cubic perovskites
     with a band gap greater than 3 eV: (cubic perovskite prototype label
     is `AB3C_cP5_221_a_c_b`)
+
+</div>
+
+<div class="cell markdown">
+
+## Exercise 7 (OQMD)
+
+</div>
+
+<div class="cell markdown">
+
+The repository
+[tachyontraveler/oqmd-optimade-tutorial](https://github.com/tachyontraveler/oqmd-optimade-tutorial)
+contains exercises pertaining to the [OQMD](https://oqmd.org) database,
+where you will construct a simple machine learning model for predicting
+band gaps from crystal structures. These exercises can also be accessed
+online with
+[Colab](https://colab.research.google.com/github/tachyontraveler/oqmd-optimade-tutorial/blob/main/Workbook.ipynb)
+or
+[Binder](https://mybinder.org/v2/gh/tachyontraveler/oqmd-optimade-tutorial/HEAD?filepath=Workbook.ipynb).
+
+[![Open In
+Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/tachyontraveler/oqmd-optimade-tutorial/blob/main/Workbook.ipynb)
+[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/tachyontraveler/oqmd-optimade-tutorial/HEAD?filepath=Workbook.ipynb)
 
 </div>
 
