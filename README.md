@@ -36,10 +36,16 @@ page](https://optimade.org/#get-involved).
 
 ### Contributors
 
--   [Matthew Evans](https://ml-evs.science), *UCLouvain*
--   [Matthew Horton](https://github.com/mkhorton), *LBNL*
+-   [Matthew Evans](https://ml-evs.science), *UCLouvain* (repository and
+    general exercises)
+-   [Matthew Horton](https://github.com/mkhorton), *LBNL* (`pymatgen`
+    exercise)
 -   [Evgeny Blokhin](https://github.com/blokhin), *Tilde Informatics*
--   [Cormac Toher](https://github.com/ctoher), *Duke University*
+    (typos and bug fixes)
+-   [Cormac Toher](https://github.com/ctoher), *Duke University* (AFLOW
+    exercise)
+-   [Abhijith Gopakumar](https://github.com/tachyontraveler),
+    *Northwestern U.* (OQMD exercise)
 
 </div>
 
@@ -395,19 +401,19 @@ prefix to the keyword: `_aflow_aflow_prototype_label_relax`.
 
 <div class="cell markdown">
 
-The repository
-[tachyontraveler/oqmd-optimade-tutorial](https://github.com/tachyontraveler/oqmd-optimade-tutorial)
-contains exercises pertaining to the [OQMD](https://oqmd.org) database,
-where you will construct a simple machine learning model for predicting
-band gaps from crystal structures. These exercises can also be accessed
+This interactive exercise explores the OQMD's OPTIMADE API, and
+demonstrates how you can train machine learning models on OPTIMADE data.
+The notebook is available at
+`./notebooks/exercise7-oqmd-optimade-tutorial` and can also be accessed
 online with
-[Colab](https://colab.research.google.com/github/tachyontraveler/oqmd-optimade-tutorial/blob/main/Workbook.ipynb)
+[Colab](https://colab.research.google.com/github/Materials-Consortia/optimade-tutorial-exercises/blob/main/notebooks/exercise7-oqmd-optimade-tutorial.ipynb)
 or
-[Binder](https://mybinder.org/v2/gh/tachyontraveler/oqmd-optimade-tutorial/HEAD?filepath=Workbook.ipynb).
+[Binder](https://mybinder.org/v2/gh/Materials-Consortia/optimade-tutorial-exercises/HEAD?filepath=notebooks/exercise7-oqmd-optimade-tutorial.ipynb)
+(buttons below).
 
 [![Open In
-Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/tachyontraveler/oqmd-optimade-tutorial/blob/main/Workbook.ipynb)
-[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/tachyontraveler/oqmd-optimade-tutorial/HEAD?filepath=Workbook.ipynb)
+Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/Materials-Consortia/optimade-tutorial-exercises/blob/main/notebooks/exercise7-oqmd-optimade-tutorial.ipynb)
+[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/Materials-Consortia/optimade-tutorial-exercises/HEAD?filepath=notebooks/exercise7-oqmd-optimade-tutorial.ipynb)
 
 </div>
 
