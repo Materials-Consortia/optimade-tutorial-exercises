@@ -46,6 +46,8 @@ page](https://optimade.org/#get-involved).
     exercise)
 -   [Abhijith Gopakumar](https://github.com/tachyontraveler),
     *Northwestern U.* (OQMD exercise)
+-   [Johan Bergsma](https://github.com/JPBergsma), *CECAM* (typos,
+    testing and feedback)
 
 </div>
 
