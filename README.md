@@ -40,7 +40,7 @@ page](https://optimade.org/#get-involved).
     general exercises)
 -   [Matthew Horton](https://github.com/mkhorton), *LBNL* (`pymatgen`
     exercise)
--   [Evgeny Blokhin](https://github.com/blokhin), *Tilde Informatics*
+-   [Evgeny Blokhin](https://tilde.pro), *Tilde Materials Informatics*
     (typos and bug fixes)
 -   [Cormac Toher](https://github.com/ctoher), *Duke University* (AFLOW
     exercise)
