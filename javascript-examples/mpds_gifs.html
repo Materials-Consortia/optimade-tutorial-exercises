@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<meta charset="utf-8" />
+</head>
+<body>
+
+<div style="position:fixed;bottom:0;left:50%;width:400px;margin-left:-200px;text-align:center;">
+    <h1><a href="javascript:document.location.reload()">Load more</a></h1>
+</div>
+
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/optimade/dist/index.js"></script>
+<script type="module">
+"use strict";
+
+function get_random_formula_anonymous(){
+
+    let formula = '';
+    const abcd = 'ABCD',
+        arity = [2, 3, 4][ Math.floor(Math.random() * 3) ];
+
+    for (let i = 0; i < arity; i++){
+        formula += abcd.charAt(i) + [1, 2, 3, 4, 5, 6, 7, 8][ Math.floor(Math.random() * 8) ];
+    }
+    return formula;
+}
+
+const query = 'chemical_formula_anonymous="' + get_random_formula_anonymous() + '"';
+console.log(query);
+
+const optimadeClient = new optimade.Optimade({corsProxyUrl: 'https://cors.optimade.science'});
+
+fetch('https://cdn.jsdelivr.net/npm/optimade/dist/prefetched.json').then(response => response.json()).then(prefetched => {
+
+    optimadeClient.providers = prefetched.providers;
+    optimadeClient.apis = prefetched.apis;
+    optimadeClient.getStructuresAll(['mpds'], query).then(results => {
+
+        for (let i = 0; i < 4; i++){
+            const title = results[0][0][0]['data'][i]['attributes']['chemical_formula_reduced'],
+                gif = new Image();
+            gif.src = results[0][0][0]['data'][i]['links']['_mpds_formats']['gif']; // MPDS supports also png
+            gif.onerror = function(){
+                this.remove(); // there might be no image, so just clean up
+            }
+            gif.setAttribute('alt', title);
+            gif.setAttribute('title', title);
+            gif.setAttribute('width', '25%');
+            document.body.appendChild(gif);
+        }
+    });
+}).catch(console.error);
+</script>
+</body>
+</html>
+<!-- It wasn't hard, right? -->
