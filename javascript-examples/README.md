@@ -8,7 +8,7 @@ Learn how this works and create your own apps running everywhere:
 Compile the code locally on your own PC using the following Unix shell commands:
 
 ```bash
-apt-get install nodejs # install Node JS here otherwise
+apt-get install nodejs npm # install Node JS + NPM here otherwise
 node -v
 npm -v
 git clone https://github.com/tilde-lab/optimade-client optimade-js-tutorial
