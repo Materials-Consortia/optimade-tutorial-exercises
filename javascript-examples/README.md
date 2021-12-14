@@ -18,6 +18,6 @@ cd optimade-js-tutorial
 npm install
 npm run build
 npm run prefetch
-npm install http-server
+npm install http-server # if server does not start, use "npm install -g http-server"
 http-server # open http://localhost:8080/examples/search.html and see console (CTRL+SHIFT+I)
 ```
