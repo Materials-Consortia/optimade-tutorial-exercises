@@ -24,6 +24,9 @@ exercises were initially provided to accompany the following workshops:
 -   ICTP-EAIFR [Training School: Working with Materials Databases and
     OPTIMADE](https://eaifr.ictp.it/about/news/ml-for-es-and-md/),
     November-December 2021.
+-   CECAM Flagship Workshop [Open Databases Integration for Materials
+    Design](https://www.cecam.org/workshop-details/1120), May 30, 2022 -
+    June 3, 2022.
 
 This document is hosted on
 [GitHub](https://github.com/Materials-Consortia/optimade-tutorial-exercises),
@@ -523,5 +526,20 @@ while True:
     if offset > 100:
         break
 ```
+
+</div>
+
+<div class="cell markdown">
+
+### Using `optimade-python-tools`
+
+Since the v0.18.0 release of
+[`optimade-python-tools`](https://github.com/Materials-Consortia/optimade-python-tools),
+the package has contained an OPTIMADE client class that can be used to
+query multiple databases simultaneously.
+
+The usage guide for this class can be found in the [online
+documentation](https://www.optimade.org/optimade-python-tools/latest/getting_started/client/)
+for the package.
 
 </div>
