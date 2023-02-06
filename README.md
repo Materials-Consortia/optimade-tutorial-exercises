@@ -75,7 +75,7 @@ community. You may have heard about three such tools in other tutorials
 and talks:
 
 1.  [The Materials Cloud web-based OPTIMADE
-    client](https://dev-tools.materialscloud.org/optimadeclient/).
+    client](https://www.materialscloud.org/optimadeclient).
 2.  [The optimade.science web-based
     aggregator](https://optimade.science).
 3.  [`pymatgen`'s built-in OPTIMADE
