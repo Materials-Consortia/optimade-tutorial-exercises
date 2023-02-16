@@ -27,6 +27,9 @@ exercises were initially provided to accompany the following workshops:
 - CECAM Flagship Workshop [Open Databases Integration for Materials
   Design](https://www.cecam.org/workshop-details/1120), May 30, 2022 -
   June 3, 2022.
+- [Actively Learning Materials
+  Science](https://sites.utu.fi/al4ms2023/), Aalto University, February
+  27, 2023 - March 3, 2023.
 
 This document is hosted on
 [GitHub](https://github.com/Materials-Consortia/optimade-tutorial-exercises),
