@@ -18,15 +18,15 @@ This repository hosts general tutorials on the OPTIMADE specification
 and particular database implementations of the API. These open-ended
 exercises were initially provided to accompany the following workshops:
 
--   NOMAD CoE [Tutorial 6:
-    OPTIMADE](https://th.fhi-berlin.mpg.de/meetings/nomad-tutorials/index.php?n=Meeting.Tutorial6),
-    7-8 September 2021
--   ICTP-EAIFR [Training School: Working with Materials Databases and
-    OPTIMADE](https://eaifr.ictp.it/about/news/ml-for-es-and-md/),
-    November-December 2021.
--   CECAM Flagship Workshop [Open Databases Integration for Materials
-    Design](https://www.cecam.org/workshop-details/1120), May 30, 2022 -
-    June 3, 2022.
+- NOMAD CoE [Tutorial 6:
+  OPTIMADE](https://th.fhi-berlin.mpg.de/meetings/nomad-tutorials/index.php?n=Meeting.Tutorial6),
+  7-8 September 2021
+- ICTP-EAIFR [Training School: Working with Materials Databases and
+  OPTIMADE](https://eaifr.ictp.it/about/news/ml-for-es-and-md/),
+  November-December 2021.
+- CECAM Flagship Workshop [Open Databases Integration for Materials
+  Design](https://www.cecam.org/workshop-details/1120), May 30, 2022 -
+  June 3, 2022.
 
 This document is hosted on
 [GitHub](https://github.com/Materials-Consortia/optimade-tutorial-exercises),
@@ -39,18 +39,18 @@ page](https://optimade.org/#get-involved).
 
 ### Contributors
 
--   [Matthew Evans](https://ml-evs.science), *UCLouvain* (repository and
-    general exercises)
--   [Matthew Horton](https://github.com/mkhorton), *LBNL* (`pymatgen`
-    exercise)
--   [Evgeny Blokhin](https://tilde.pro), *Tilde Materials Informatics*
-    (typos and bug fixes)
--   [Cormac Toher](https://github.com/ctoher), *Duke University* (AFLOW
-    exercise)
--   [Abhijith Gopakumar](https://github.com/tachyontraveler),
-    *Northwestern U.* (OQMD exercise)
--   [Johan Bergsma](https://github.com/JPBergsma), *CECAM* (typos,
-    testing and feedback)
+- [Matthew Evans](https://ml-evs.science), *UCLouvain* (repository and
+  general exercises)
+- [Matthew Horton](https://github.com/mkhorton), *LBNL* (`pymatgen`
+  exercise)
+- [Evgeny Blokhin](https://tilde.pro), *Tilde Materials Informatics*
+  (typos and bug fixes)
+- [Cormac Toher](https://github.com/ctoher), *Duke University* (AFLOW
+  exercise)
+- [Abhijith Gopakumar](https://github.com/tachyontraveler),
+  *Northwestern U.* (OQMD exercise)
+- [Johan Bergsma](https://github.com/JPBergsma), *CECAM* (typos, testing
+  and feedback)
 
 </div>
 
@@ -75,37 +75,41 @@ community. You may have heard about three such tools in other tutorials
 and talks:
 
 1.  [The Materials Cloud web-based OPTIMADE
-    client](https://www.materialscloud.org/optimadeclient).
+    client](https://materialscloud.org/optimadeclient/).
 2.  [The optimade.science web-based
     aggregator](https://optimade.science).
 3.  [`pymatgen`'s built-in OPTIMADE
     client](https://pymatgen.org/pymatgen.ext.optimade.html?highlight=optimade#module-pymatgen.ext.optimade).
+4.  [`optimade-python-tools`'s
+    `OptimadeClient`](https://www.optimade.org/optimade-python-tools/latest/getting_started/client/)
 
-Each of these clients can send requests to multiple OPTIMADE providers
+Some of these clients can send requests to multiple OPTIMADE providers
 *simultaneously*, based on programmatic [providers
 list](https://providers.optimade.org/). You can explore this list at the
 human-readable [providers
 dashboard](https://www.optimade.org/providers-dashboard/), where you can
-see the current OPTIMADE structure count exceeds 17 million!
+see the current OPTIMADE structure count exceeds 26 million!
 
 You may wish to familiarise yourselves with the OPTIMADE API by writing
 your own queries, scripts or code. Some possible options:
 
--   Craft (or copy) your own URL queries to a particular OPTIMADE
-    implementation. Some web browsers (e.g., Firefox) will automatically
-    format the JSON response for you (see Exercise 1).
--   Use command-line tools such as [`curl`](https://curl.se/) or
-    [`wget`](https://www.gnu.org/software/wget/) to receive data in your
-    terminal, or pipe it to a file. You could use the tool
-    [`jq`](https://stedolan.github.io/jq/) to format the JSON response.
--   Make an appropriate HTTP request from your programming language of
-    choice. For Python, you could use the standard library
-    [urllib.request](https://docs.python.org/3/library/urllib.request.html)
-    or the more ergonomic external library
-    [requests](https://requests.readthedocs.io/en/master/). Some example
-    code for Python is provided in Exercise 1 below. In Javascript, you
-    can just use `fetch(...)` or a more advanced [optimade
-    client](https://github.com/tilde-lab/optimade-client).
+- Craft (or copy) your own URL queries to a particular OPTIMADE
+  implementation. Some web browsers (e.g., Firefox) will automatically
+  format the JSON response for you (see Exercise 1).
+- Use command-line tools such as [`curl`](https://curl.se/) or
+  [`wget`](https://www.gnu.org/software/wget/) to receive data in your
+  terminal, or pipe it to a file. You could use the tool
+  [`jq`](https://stedolan.github.io/jq/) to format the JSON response.
+- Make an appropriate HTTP request from your programming language of
+  choice. For Python, you could use the standard library
+  [urllib.request](https://docs.python.org/3/library/urllib.request.html)
+  or the more ergonomic external libraries
+  [requests](https://docs.python-requests.org/en/latest/index.html) and
+  [httpx](https://www.python-httpx.org). Some example code for Python is
+  provided below the exercises. In Javascript, you can just use
+  `fetch(...)` or a more advanced OPTIMADE client such as that provided
+  by Tilde Informatics'
+  [optimade-client](https://github.com/tilde-lab/optimade-client).
 
 If you are following these tutorials as part of a school or workshop,
 please do not hesitate to ask about how to get started with any of the
@@ -127,45 +131,45 @@ number of results to a set of queries across all OPTIMADE
 implementations, obtained by applying the same filter to the structures
 endpoint of each database. The filters are:
 
--   Query for structures containing a group IV element:
-    `elements HAS ANY "C", "Si", "Ge", "Sn", "Pb"`.
+- Query for structures containing a group IV element:
+  `elements HAS ANY "C", "Si", "Ge", "Sn", "Pb"`.
 
--   As above, but return only binary phases:
-    `elements HAS ANY "C", "Si", "Ge", "Sn", "Pb" AND nelements=2`.
+- As above, but return only binary phases:
+  `elements HAS ANY "C", "Si", "Ge", "Sn", "Pb" AND nelements=2`.
 
--   This time, exclude lead and return ternary phases:
-    `elements HAS ANY "C", "Si", "Ge", "Sn" AND NOT elements HAS "Pb" AND elements LENGTH 3`.
+- This time, exclude lead and return ternary phases:
+  `elements HAS ANY "C", "Si", "Ge", "Sn" AND NOT elements HAS "Pb" AND elements LENGTH 3`.
 
--   In your browser, try visiting the links in Table 1 of the OPTIMADE
-    paper \[[1](#ref1)\] (clickable links in arXiv version
-    \[[2](#ref2)\]), which is reproduced below.
+- In your browser, try visiting the links in Table 1 of the OPTIMADE
+  paper \[[1](#ref1)\] (clickable links in arXiv version
+  \[[2](#ref2)\]), which is reproduced below.
 
-    -   Familiarise yourself with the standard JSON:API output fields
-        (`data`, `meta` and `links`).
-    -   You will find the crystal structures returned for the query as a
-        list under the `data` key, with the OPTIMADE-defined fields
-        listed under the `attributes` of each list entry.
-    -   The `meta` field provides useful information about your query,
-        e.g. `data_returned` shows how many results there are in total,
-        not just in the current page of the response (you can check if
-        the table still contains the correct number of entries, or if it
-        is now out of date).
-    -   The `links` field provides links to the next or previous pages
-        of your response, in case you requested more structures than the
-        `page_limit` for that implementation.
+  - Familiarise yourself with the standard JSON:API output fields
+    (`data`, `meta` and `links`).
+  - You will find the crystal structures returned for the query as a
+    list under the `data` key, with the OPTIMADE-defined fields listed
+    under the `attributes` of each list entry.
+  - The `meta` field provides useful information about your query, e.g.
+    `data_returned` shows how many results there are in total, not just
+    in the current page of the response (you can check if the table
+    still contains the correct number of entries, or if it is now out of
+    date).
+  - The `links` field provides links to the next or previous pages of
+    your response, in case you requested more structures than the
+    `page_limit` for that implementation.
 
--   Choose one particular entry to focus on: replace the `filter` URL
-    parameter with `/<structure_id>` for the `id` of one particular
-    structure (e.g.
-    `https://example.org/optimade/v1/structures/<structure_id>`).
+- Choose one particular entry to focus on: replace the `filter` URL
+  parameter with `/<structure_id>` for the `id` of one particular
+  structure (e.g.
+  `https://example.org/optimade/v1/structures/<structure_id>`).
 
--   Explore other endpoints provided by each of these providers. If they
-    serve "extra" fields (i.e. those containing the provider prefix),
-    try to find out what these fields mean by querying the
-    `/info/structures` endpoint.
+- Explore other endpoints provided by each of these providers. If they
+  serve "extra" fields (i.e. those containing the provider prefix), try
+  to find out what these fields mean by querying the `/info/structures`
+  endpoint.
 
--   Try performing the same queries with some of the tools listed above,
-    or in scripts of your own design.
+- Try performing the same queries with some of the tools listed above,
+  or in scripts of your own design.
 
 <center>
 <table>
@@ -254,30 +258,30 @@ The filters from Exercise 1 screened for group IV containing compounds,
 further refining the query to exclude lead, and finally to include only
 ternary phases.
 
--   Choose a suitable database and modfiy the filters from Exercise 1 to
-    search for binary \[III\]-\[V\] semiconductors.
-    -   A "suitable" database here is one that you think will have good
-        coverage across this chemical space.
--   Using the `chemical_formula_anonymous` field, investigate the most
-    common stoichiometric ratios between the constituent elements, e.g.
-    1:1, 2:1, etc.
-    -   You may need to follow pagination links (`links->next` in the
-        response) to access all available data for your query, or you
-        can try adding the `page_limit=100` URL parameter to request
-        more structures per response.
--   Apply the same filter to another database and assess the similarity
-    between the results, thinking carefully about how the different
-    focuses of each database and different methods in their
-    construction/curation could lead to biases in this outcome.
-    -   For example, an experimental database may have one crystal
-        structure entry per experimental sample studied, in which case
-        the most useful (or "fashionable") compositions will return many
-        more entries, especially when compared to a database that
-        curates crystal structures such that each ideal crystal has one
-        canonical entry (e.g., a database of minerals).
--   Try to use the query you have constructed in the multi-provider
-    clients (linked above), to query all OPTIMADE providers
-    simultaneously.
+- Choose a suitable database and modfiy the filters from Exercise 1 to
+  search for binary \[III\]-\[V\] semiconductors.
+  - A "suitable" database here is one that you think will have good
+    coverage across this chemical space.
+- Using the `chemical_formula_anonymous` field, investigate the most
+  common stoichiometric ratios between the constituent elements, e.g.
+  1:1, 2:1, etc.
+  - You may need to follow pagination links (`links->next` in the
+    response) to access all available data for your query, or you can
+    try adding the `page_limit=100` URL parameter to request more
+    structures per response.
+- Apply the same filter to another database and assess the similarity
+  between the results, thinking carefully about how the different
+  focuses of each database and different methods in their
+  construction/curation could lead to biases in this outcome.
+  - For example, an experimental database may have one crystal structure
+    entry per experimental sample studied, in which case the most useful
+    (or "fashionable") compositions will return many more entries,
+    especially when compared to a database that curates crystal
+    structures such that each ideal crystal has one canonical entry
+    (e.g., a database of minerals).
+- Try to use the query you have constructed in the multi-provider
+  clients (linked above), to query all OPTIMADE providers
+  simultaneously.
 
 </div>
 
@@ -322,25 +326,25 @@ allows implementations to serve their own fields with an appropriate
 `/info/structures` endpoint.
 
 One computed property that is key to many high-throughput studies is the
-*chemical stability* (*δ*) of a crystal structure, i.e. whether the
+*chemical stability* ($\delta$) of a crystal structure, i.e. whether the
 structure is predicted to spontaneously decompose into a different phase
 (or phases). This is typically computed as the distance from the convex
 hull in composition-energy space, with a value of 0 (or \<0, if the
 target structure was not used to compute the hull itself) indicating a
 stable structure.
 
--   Interrogate the `/info/structures` endpoints of the OPTIMADE
-    implementations that serve DFT data (e.g., Materials Project, AFLOW,
-    OQMD, etc.) and identify those that serve a field that could
-    correspond to hull distance, or other stability metrics.
--   Construct a filter that allows you to screen a database for
-    metastable materials (i.e., 0 \< *δ* \< 25 meV/atom) according to
-    this metric.
--   Try to create a filter that can be applied to multiple databases
-    simultaneously (e.g., apply
-    `?filter=_databaseA_hull_distance < 25 OR _databaseB_stability < 25`).
-    What happens when you run this filter against a database that does
-    not contain the field?
+- Interrogate the `/info/structures` endpoints of the OPTIMADE
+  implementations that serve DFT data (e.g., Materials Project, AFLOW,
+  OQMD, etc.) and identify those that serve a field that could
+  correspond to hull distance, or other stability metrics.
+- Construct a filter that allows you to screen a database for metastable
+  materials (i.e., $0 < \delta < 25\text{ meV/atom}$) according to this
+  metric.
+- Try to create a filter that can be applied to multiple databases
+  simultaneously (e.g., apply
+  `?filter=_databaseA_hull_distance < 25 OR _databaseB_stability < 25`).
+  What happens when you run this filter against a database that does not
+  contain the field?
 
 </div>
 
@@ -361,12 +365,12 @@ GitHub](https://github.com/Materials-Consortia/) repository.
 
 Some potential prompts:
 
--   What additional fields or entry types should OPTIMADE standardize to
-    be most useful to you?
--   How could the existing tools be improved, or what new tools could be
-    created to make OPTIMADE easier to use?
--   What features from other APIs/databases that you use could be
-    adopted within OPTIMADE?
+- What additional fields or entry types should OPTIMADE standardize to
+  be most useful to you?
+- How could the existing tools be improved, or what new tools could be
+  created to make OPTIMADE easier to use?
+- What features from other APIs/databases that you use could be adopted
+  within OPTIMADE?
 
 </div>
 
@@ -390,11 +394,11 @@ found at AFLOW's `/info/structures` endpoint
 performed for prototype labels using OPTIMADE by appending the `_aflow_`
 prefix to the keyword: `_aflow_aflow_prototype_label_relax`.
 
--   Use OPTIMADE to search AFLOW for NaCl in the rock salt structure
-    (prototype label `AB_cF8_225_a_b`)
--   Use OPTIMADE to search AFLOW for lead-free halide cubic perovskites
-    with a band gap greater than 3 eV: (cubic perovskite prototype label
-    is `AB3C_cP5_221_a_c_b`)
+- Use OPTIMADE to search AFLOW for NaCl in the rock salt structure
+  (prototype label `AB_cF8_225_a_b`)
+- Use OPTIMADE to search AFLOW for lead-free halide cubic perovskites
+  with a band gap greater than 3 eV: (cubic perovskite prototype label
+  is `AB3C_cP5_221_a_c_b`)
 
 </div>
 
