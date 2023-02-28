@@ -431,6 +431,23 @@ Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.
 
 <div class="cell markdown">
 
+## Exercise 8 (optimade-python-tools)
+
+This example explores the use of optimade-python-tools for querying and
+serving OPTIMADE data. The notebook is available at
+`./notebooks/exercise8-optimade-python-tools` and can be accessed online
+with Colab or Biner (buttons below).
+
+[![Open In
+Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/Materials-Consortia/optimade-tutorial-exercises/blob/main/notebooks/exercise8-optimade-python-tools.ipynb)
+[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/Materials-Consortia/optimade-tutorial-exercises/HEAD?filepath=notebooks/exercise8-optimade-python-tools.ipynb)
+
+</div>
+
+<div class="cell markdown">
+
+# Appendix
+
 ## Example Python code
 
 You may find the following Python code snippets useful in the above
@@ -533,20 +550,5 @@ while True:
     if offset > 100:
         break
 ```
-
-</div>
-
-<div class="cell markdown">
-
-### Using `optimade-python-tools`
-
-Since the v0.18.0 release of
-[`optimade-python-tools`](https://github.com/Materials-Consortia/optimade-python-tools),
-the package has contained an OPTIMADE client class that can be used to
-query multiple databases simultaneously.
-
-The usage guide for this class can be found in the [online
-documentation](https://www.optimade.org/optimade-python-tools/latest/getting_started/client/)
-for the package.
 
 </div>
