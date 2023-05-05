@@ -43,7 +43,7 @@ page](https://optimade.org/#get-involved).
 ### Contributors
 
 - [Matthew Evans](https://ml-evs.science), *UCLouvain* (repository and
-  general exercises)
+  general exercises, `optimade-python-tools` exercise and projects)
 - [Matthew Horton](https://github.com/mkhorton), *LBNL* (`pymatgen`
   exercise)
 - [Evgeny Blokhin](https://tilde.pro), *Tilde Materials Informatics*
@@ -120,9 +120,15 @@ above tools!
 
 </div>
 
-<div class="cell markdown">
+<div class="cell markdown" tags="[]">
 
-## Exercise 1
+## Exercises
+
+</div>
+
+<div class="cell markdown" jp-MarkdownHeadingCollapsed="true" tags="[]">
+
+### Exercise 1
 
 </div>
 
@@ -249,9 +255,9 @@ exchanging materials data" (2021)
 
 </div>
 
-<div class="cell markdown">
+<div class="cell markdown" jp-MarkdownHeadingCollapsed="true" tags="[]">
 
-## Exercise 2
+### Exercise 2
 
 </div>
 
@@ -288,9 +294,9 @@ ternary phases.
 
 </div>
 
-<div class="cell markdown">
+<div class="cell markdown" jp-MarkdownHeadingCollapsed="true" tags="[]">
 
-## Exercise 3 (pymatgen)
+### Exercise 3 (pymatgen)
 
 </div>
 
@@ -310,9 +316,9 @@ Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.
 
 </div>
 
-<div class="cell markdown">
+<div class="cell markdown" jp-MarkdownHeadingCollapsed="true" tags="[]">
 
-## Exercise 4
+### Exercise 4
 
 </div>
 
@@ -351,9 +357,9 @@ stable structure.
 
 </div>
 
-<div class="cell markdown">
+<div class="cell markdown" jp-MarkdownHeadingCollapsed="true" tags="[]">
 
-## Exercise 5
+### Exercise 5
 
 </div>
 
@@ -377,9 +383,9 @@ Some potential prompts:
 
 </div>
 
-<div class="cell markdown">
+<div class="cell markdown" jp-MarkdownHeadingCollapsed="true" tags="[]">
 
-## Exercise 6 (AFLOW)
+### Exercise 6 (AFLOW)
 
 </div>
 
@@ -405,9 +411,9 @@ prefix to the keyword: `_aflow_aflow_prototype_label_relax`.
 
 </div>
 
-<div class="cell markdown">
+<div class="cell markdown" jp-MarkdownHeadingCollapsed="true" tags="[]">
 
-## Exercise 7 (OQMD)
+### Exercise 7 (OQMD)
 
 </div>
 
@@ -429,9 +435,13 @@ Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.
 
 </div>
 
-<div class="cell markdown">
+<div class="cell markdown" jp-MarkdownHeadingCollapsed="true" tags="[]">
 
-## Exercise 8 (optimade-python-tools)
+### Exercise 8 (optimade-python-tools)
+
+</div>
+
+<div class="cell markdown" tags="[]">
 
 This example explores the use of optimade-python-tools for querying and
 serving OPTIMADE data. The notebook is available at
@@ -444,11 +454,78 @@ Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.
 
 </div>
 
+<div class="cell markdown" tags="[]">
+
+## Projects
+
+</div>
+
 <div class="cell markdown">
 
-# Appendix
+These projects were introduced as part of the 2023 annual workshop and
+give some suggestions about short/medium-length projects that make use
+of OPTIMADE.
 
-## Example Python code
+</div>
+
+<div class="cell markdown" jp-MarkdownHeadingCollapsed="true" tags="[]">
+
+### Project Idea 1: Creating an OPTIMADE API for an existing dataset
+
+</div>
+
+<div class="cell markdown" tags="[]">
+
+Take an atomistic/materials dataset you work with or are publishing and
+create an OPTIMADE API for the data.
+
+- Would this dataset be useful to the broader community?
+- What value does being able to filter on the data in a uniform way
+  bring?
+- Can you use any of the OPTIMADE client tools to explore your data in a
+  new way?
+
+</div>
+
+<div class="cell markdown" jp-MarkdownHeadingCollapsed="true" tags="[]">
+
+### Project Idea 2: Creating new tools for exploring OPTIMADE API data
+
+</div>
+
+<div class="cell markdown">
+
+### Project Idea 3: Inorganic powder XRD screening with OPTIMADE structures
+
+</div>
+
+<div class="cell markdown">
+
+### Project Idea 4: Construct a phase diagram using OPTIMADE data
+
+</div>
+
+<div class="cell markdown">
+
+### Project Idea 5: Data mining of OPTIMADE APIs against structural descriptors
+
+</div>
+
+<div class="cell markdown">
+
+### Project Idea 6: Comparing low-dimensioanl representations of compositional spaces of different OPTIMADE APIs
+
+</div>
+
+<div class="cell markdown" tags="[]">
+
+## Appendix
+
+</div>
+
+<div class="cell markdown" jp-MarkdownHeadingCollapsed="true" tags="[]">
+
+### Example Python code
 
 You may find the following Python code snippets useful in the above
 exercises. This document can be opened as a Jupyter notebook using the
