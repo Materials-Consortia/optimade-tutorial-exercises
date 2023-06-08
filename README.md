@@ -513,7 +513,7 @@ create an OPTIMADE API for the data.
 
 <div class="cell markdown">
 
-### Project Idea 6: Comparing low-dimensioanl representations of compositional spaces of different OPTIMADE APIs
+### Project Idea 6: Comparing low-dimensional representations of compositional spaces of different OPTIMADE APIs
 
 </div>
 
