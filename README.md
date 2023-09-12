@@ -82,7 +82,7 @@ and talks:
 2.  [The optimade.science web-based
     aggregator](https://optimade.science).
 3.  [`pymatgen`'s built-in OPTIMADE
-    client](https://pymatgen.org/pymatgen.ext.optimade.html?highlight=optimade#module-pymatgen.ext.optimade).
+    client](https://pymatgen.org/pymatgen.ext.html#pymatgenextoptimade-module).
 4.  [`optimade-python-tools`'s
     `OptimadeClient`](https://www.optimade.org/optimade-python-tools/latest/getting_started/client/)
 
