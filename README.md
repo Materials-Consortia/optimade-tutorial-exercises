@@ -74,7 +74,7 @@ browser, any programming language that can make HTTP requests, or common
 command-line tools such as `curl` or `wget`.
 
 There are also specialist tools, developed by members of the OPTIMADE
-community. You may have heard about three such tools in other tutorials
+community. You may have heard about four such tools in other tutorials
 and talks:
 
 1.  [The Materials Cloud web-based OPTIMADE
@@ -87,7 +87,7 @@ and talks:
     `OptimadeClient`](https://www.optimade.org/optimade-python-tools/latest/getting_started/client/)
 
 Some of these clients can send requests to multiple OPTIMADE providers
-*simultaneously*, based on programmatic [providers
+*simultaneously*, based on the programmatic [providers
 list](https://providers.optimade.org/). You can explore this list at the
 human-readable [providers
 dashboard](https://www.optimade.org/providers-dashboard/), where you can
@@ -128,9 +128,9 @@ above tools!
 
 <div class="cell markdown">
 
-This aim of this exercise is to familiarise yourself with the OPTIMADE
+The aim of this exercise is to familiarise yourself with the OPTIMADE
 JSON API. In the recent OPTIMADE paper \[[1](#ref1)\], we provided the
-number of results to a set of queries across all OPTIMADE
+number of results for a set of queries across all OPTIMADE
 implementations, obtained by applying the same filter to the structures
 endpoint of each database. The filters are:
 
@@ -144,7 +144,7 @@ endpoint of each database. The filters are:
   `elements HAS ANY "C", "Si", "Ge", "Sn" AND NOT elements HAS "Pb" AND elements LENGTH 3`.
 
 - In your browser, try visiting the links in Table 1 of the OPTIMADE
-  paper \[[1](#ref1)\] (clickable links in arXiv version
+  paper \[[1](#ref1)\] (clickable links in the arXiv version
   \[[2](#ref2)\]), which is reproduced below.
 
   - Familiarise yourself with the standard JSON:API output fields
@@ -261,7 +261,7 @@ The filters from Exercise 1 screened for group IV containing compounds,
 further refining the query to exclude lead, and finally to include only
 ternary phases.
 
-- Choose a suitable database and modfiy the filters from Exercise 1 to
+- Choose a suitable database and modify the filters from Exercise 1 to
   search for binary \[III\]-\[V\] semiconductors.
   - A "suitable" database here is one that you think will have good
     coverage across this chemical space.
@@ -465,7 +465,7 @@ GitHub repository.
 # You should be able to use any valid OPTIMADE implementation's
 # database URL with any valid query
 #
-# Lets choose a random provider for now:
+# Let's choose a random provider for now:
 import random
 some_optimade_base_urls = [
     "https://optimade.materialsproject.org", 
